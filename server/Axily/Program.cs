@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers()
        .Services.AddSwaggerGenerator()
        .AddServiceContainer()
-       .ConfigureSqlContext(builder.Configuration);
+       .ConfigureNpgsqlContext(builder.Configuration);
 
 var app = builder.Build();
 
