@@ -8,7 +8,7 @@ namespace Axily.Extensions
         public static IServiceCollection ConfigureNpgsqlContext(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<ApplicationDbContext>(opts =>
-            opts.UseNpgsql(configuration.GetConnectionString("PostgreConnection")));
+            opts.UseLazyLoadingProxies().UseNpgsql(configuration.GetConnectionString("PostgreConnection")));
             return services;
         }
     }
